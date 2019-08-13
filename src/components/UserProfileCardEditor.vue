@@ -57,14 +57,16 @@
       user: {
         required: true,
         type: Object
+      }
+    },
+
+    computed: {
+      userPostsCount () {
+        return this.$store.getters.userPostsCount(this.user['.key'])
       },
-      userPostsCount: {
-        required: true,
-        type: Number
-      },
-      userThreadsCount: {
-        required: true,
-        type: Number
+
+      userThreadsCount () {
+        return this.$store.getters.userThreadsCount(this.user['.key'])
       }
     },
 
